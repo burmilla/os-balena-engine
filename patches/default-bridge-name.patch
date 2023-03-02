@@ -1,0 +1,14 @@
+diff --git a/vendor/github.com/docker/libnetwork/drivers/bridge/interface.go b/vendor/github.com/docker/libnetwork/drivers/bridge/interface.go
+index c97feceb37..c9f3e8dfb7 100644
+--- a/vendor/github.com/docker/libnetwork/drivers/bridge/interface.go
++++ b/vendor/github.com/docker/libnetwork/drivers/bridge/interface.go
+@@ -11,7 +11,7 @@ import (
+ const (
+ 	// DefaultBridgeName is the default name for the bridge interface managed
+ 	// by the driver when unspecified by the caller.
+-	DefaultBridgeName = "balena0"
++	DefaultBridgeName = "docker0"
+ )
+ 
+ // Interface models the bridge network device.
+

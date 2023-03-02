@@ -1,0 +1,14 @@
+diff --git a/cmd/dockerd/config_common_unix.go b/cmd/dockerd/config_common_unix.go
+index 535b4f3647..251589c397 100644
+--- a/cmd/dockerd/config_common_unix.go
++++ b/cmd/dockerd/config_common_unix.go
+@@ -53,7 +53,7 @@ func installUnixConfigFlags(conf *config.Config, flags *pflag.FlagSet) {
+ 
+ 	flags.StringVarP(&conf.SocketGroup, "group", "G", "balena-engine", "Group for the unix socket")
+ 	flags.StringVar(&conf.BridgeConfig.IP, "bip", "", "Specify network bridge IP")
+-	flags.StringVarP(&conf.BridgeConfig.Iface, "bridge", "b", "", "Attach containers to a network bridge")
++	flags.StringVarP(&conf.BridgeConfig.Iface, "bridge", "b", "none", "Attach containers to a network bridge")
+ 	flags.StringVar(&conf.BridgeConfig.FixedCIDR, "fixed-cidr", "", "IPv4 subnet for fixed IPs")
+ 	flags.Var(opts.NewIPOpt(&conf.BridgeConfig.DefaultGatewayIPv4, ""), "default-gateway", "Container default gateway IPv4 address")
+ 	flags.Var(opts.NewIPOpt(&conf.BridgeConfig.DefaultGatewayIPv6, ""), "default-gateway-v6", "Container default gateway IPv6 address")
+

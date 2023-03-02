@@ -23,6 +23,10 @@ jobs:
         sudo bunzip2 /usr/local/bin/github-release.bz2
         sudo chmod 0755 /usr/local/bin/github-release
 
+    - name: Apply patches
+      run: |
+        find ../os-balena-engine/patches/*.patch -exec bash -c 'patch -p1 < "$0"' {} \;
+
     - name: Build
       run: |
         make binary
